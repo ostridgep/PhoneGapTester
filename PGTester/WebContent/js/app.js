@@ -43,6 +43,7 @@ function downloadAsset(url,filename) {
 		});
 }
 function openFile(f){
+	alert("open"+f)
 	window.plugins.fileOpener.open(f);
 }
 //I'm only called when the file exists or has been downloaded.
