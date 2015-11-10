@@ -6,7 +6,7 @@
         id        = "com.pjo.pgbuildtester"
         version   = "1">
 
-    <name>FileDounloadTest</name>
+    <name>DownloadTest</name>
     <description>
       test File Download
     </description>

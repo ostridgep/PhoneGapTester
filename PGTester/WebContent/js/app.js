@@ -34,15 +34,15 @@ function downloadAsset(url,filename) {
 	alert("About to start transfer"+url+" into "+filename);
 	fileTransfer.download(url, filename, 
 		function(entry) {
-			alert("Success!");
+			alert("Success!"+filename);
 		}, 
 		function(err) {
-			alert("Error");
-			alert(err);
+			alert("Error"+filename+err);
+		
 		});
 }
 
 //I'm only called when the file exists or has been downloaded.
 function appStart() {
-	$status.innerHTML = "App ready!<BR><a href='Docs/file.txt'>Text File</a><BR><a href='Docs/file.xls'>XLS File</a><BR><a href='Docs/file.doc'>Doc File</a>";
+	$status.innerHTML = "App ready!<BR><a href='Docs/file.txt'>Text File</a><BR><BR><a href='"+store+"/Docs/file.xls'>XLS File</a><BR><BR><a href='"+store+"/Docs/file.doc'>Doc File</a>";
 }
