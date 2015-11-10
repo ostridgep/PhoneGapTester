@@ -8,7 +8,7 @@ var $status;
 
 //URL of our asset
 var assetURLtxt = "https://raw.githubusercontent.com/cfjedimaster/Cordova-Examples/master/readme.md";
-var assetURLxls = "coral.ie.lehigh.edu/~ted/files/eng5/misc/sample.xls"
+var assetURLxls = "http://www.akronlibrary.org/training/pdf/SampleCustomerReports.xls"
 var assetURLdoc = "https://www.swiftview.com/tech/letterlegal5.doc"
 //File name of our important data file we didn't ship with the app
 var fileNametxt = "Docs/file.txt";
@@ -44,5 +44,5 @@ function downloadAsset(url,filename) {
 
 //I'm only called when the file exists or has been downloaded.
 function appStart() {
-	$status.innerHTML = "App ready!<BR><a href='Docs/file.txt'>Text File</a><BR><BR><a href='"+store+"/Docs/file.xls'>XLS File</a><BR><BR><a href='"+store+"/Docs/file.doc'>Doc File</a>";
+	$status.innerHTML = "App ready!<BR><a href='"+store+"/Docs/file.txt'>Text File</a><BR><BR><a href='"+store+"/Docs/file.xls'>XLS File</a><BR><BR><a href='"+store+"/Docs/file.doc'>Doc File</a>";
 }
