@@ -48,5 +48,5 @@ function openFile(f){
 }
 //I'm only called when the file exists or has been downloaded.
 function appStart() {
-	$status.innerHTML = "App ready!<BR><a href='javascript:openFile(\'"+store+"/Docs/file.txt\''>Text File</a><BR><BR><a href='javascript:openFile(\'"+store+"/Docs/file.xls\''>XLS File</a><BR><BR><a href='javascript:openFile(\'"+store+"/Docs/file.doc\''>Doc File</a>";
+	$status.innerHTML = "App ready!<BR><a href='#' onclick='openFile(\'"+store+"/Docs/file.txt\')'>Text File</a><BR><BR><a href='#' onclick='openFile(\'"+store+"/Docs/file.xls\')'>XLS File</a><BR><BR><a href='#' onclick='openFile(\'"+store+"/Docs/file.doc\')'>Doc File</a>";
 }
