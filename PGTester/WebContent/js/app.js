@@ -35,14 +35,17 @@ function downloadAsset(url,filename) {
 	fileTransfer.download(url, filename, 
 		function(entry) {
 			alert("Success!"+filename);
+			
 		}, 
 		function(err) {
 			alert("Error"+filename+err);
 		
 		});
 }
-
+function openFile(f){
+	window.plugins.fileOpener.open(f);
+}
 //I'm only called when the file exists or has been downloaded.
 function appStart() {
-	$status.innerHTML = "App ready!<BR><a href='"+store+"/Docs/file.txt'>Text File</a><BR><BR><a href='"+store+"/Docs/file.xls'>XLS File</a><BR><BR><a href='"+store+"/Docs/file.doc'>Doc File</a>";
+	$status.innerHTML = "App ready!<BR><a href='javascript:openFile(\'"+store+"/Docs/file.txt\''>Text File</a><BR><BR><a href='javascript:openFile(\'"+store+"/Docs/file.xls\''>XLS File</a><BR><BR><a href='javascript:openFile(\'"+store+"/Docs/file.doc\''>Doc File</a>";
 }
