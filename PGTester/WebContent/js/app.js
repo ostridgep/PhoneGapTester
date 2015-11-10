@@ -32,7 +32,7 @@ function init() {
 function downloadAsset(url,filename) {
 	var fileTransfer = new FileTransfer();
 	alert("About to start transfer"+url+" into "+filename);
-	fileTransfer.download(url, store + fileName, 
+	fileTransfer.download(url, filename, 
 		function(entry) {
 			alert("Success!");
 		}, 
