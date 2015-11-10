@@ -7,11 +7,13 @@ var store;
 var $status;
 
 //URL of our asset
-var assetURL = "https://raw.githubusercontent.com/cfjedimaster/Cordova-Examples/master/readme.md";
-
+var assetURLtxt = "https://raw.githubusercontent.com/cfjedimaster/Cordova-Examples/master/readme.md";
+var assetURLxls = "coral.ie.lehigh.edu/~ted/files/eng5/misc/sample.xls"
+var assetURLdoc = "https://www.swiftview.com/tech/letterlegal5.doc"
 //File name of our important data file we didn't ship with the app
-var fileName = "mydatafile.txt";
-
+var fileNametxt = "Docs/file.txt";
+var fileNamexls = "Docs/file.xls";
+var fileNamedoc = "Docs/file.doc";
 function init() {
 	
 	$status = document.querySelector("#status");
@@ -21,25 +23,26 @@ function init() {
 	store = cordova.file.dataDirectory;
 
 	//Check for the file. 
-	window.resolveLocalFileSystemURL(store + fileName, appStart, downloadAsset);
-
+	window.resolveLocalFileSystemURL(store + fileNametxt, appStart, downloadAsset(assetURLtxt,store + fileNametxt));
+	window.resolveLocalFileSystemURL(store + fileNamexls, appStart, downloadAsset(assetURLxls,store + fileNamexls));
+	window.resolveLocalFileSystemURL(store + fileNamedoc, appStart, downloadAsset(assetURLdoc,store + fileNamedoc));
+	 appStart()
 }
 
-function downloadAsset() {
+function downloadAsset(url,filename) {
 	var fileTransfer = new FileTransfer();
-	console.log("About to start transfer");
-	fileTransfer.download(assetURL, store + fileName, 
+	alert("About to start transfer"+url+" into "+filename);
+	fileTransfer.download(url, store + fileName, 
 		function(entry) {
-			console.log("Success!");
-			appStart();
+			alert("Success!");
 		}, 
 		function(err) {
-			console.log("Error");
-			console.dir(err);
+			alert("Error");
+			alert(err);
 		});
 }
 
 //I'm only called when the file exists or has been downloaded.
 function appStart() {
-	$status.innerHTML = "App ready!";
+	$status.innerHTML = "App ready!<BR><a href='Docs/file.txt'>Text File</a><BR><a href='Docs/file.xls'>XLS File</a><BR><a href='Docs/file.doc'>Doc File</a>";
 }
