@@ -42,11 +42,19 @@ function downloadAsset(url,filename) {
 		
 		});
 }
-function openFile(f){
-	alert("open"+f)
-	window.plugins.fileOpener.open(f);
+function openFile1(){
+	alert("open"+store+"/Docs/file.txt")
+	window.plugins.fileOpener.open(store+"/Docs/file.txt");
+}
+function openFile2(){
+	alert("open"+store+"/Docs/file.xls")
+	window.plugins.fileOpener.open(store+"/Docs/file.xls");
+}
+function openFile3(){
+	alert("open"+store+"/Docs/file.doc")
+	window.plugins.fileOpener.open(store+"/Docs/file.doc");
 }
 //I'm only called when the file exists or has been downloaded.
 function appStart() {
-	$status.innerHTML = "App ready!<BR><a href='#' onclick='openFile(\'"+store+"/Docs/file.txt\')'>Text File</a><BR><BR><a href='#' onclick='openFile(\'"+store+"/Docs/file.xls\')'>XLS File</a><BR><BR><a href='#' onclick='openFile(\'"+store+"/Docs/file.doc\')'>Doc File</a>";
+	$status.innerHTML = "App ready!<BR><a href='#' onclick='openFile1()'>Text File</a><BR><BR><a href='#' onclick='openFile2()'>XLS File</a><BR><BR><a href='#' onclick='openFile3()'>Doc File</a>";
 }
